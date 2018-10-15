@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main()
+{
+	float a;
+	float b;
+	float c;
+	float r1;
+	float r2;
+	printf("\n entrez a b c de l'equation du second degre\n");
+	scanf_s("%f %f %f", &a, &b, &c);
+	if ((b*b) - (4*a*c) > 0)
+	{
+		r1 = (-b - sqrt((b*b) - (4*a*c)) / (2 * a));
+		r2 = (-b + sqrt(b*b - 4 * a*c)) / (2 * a);
+		printf("les racines de ce polynomes sont %f et %f \n", r1, r2);	
+	}
+	else if ((b*b) - (4*a*c) = 0)
+	{
+		r1 = (-b) / (2 * a);
+		printf("la racine double de ce polynomes est %f \n", r1);
+	}
+	else
+	{
+		printf("pas de racine reel \n");
+	}
+	system("pause");
+	return (EXIT_SUCCESS);
+}
