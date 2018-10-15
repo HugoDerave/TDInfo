@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	float revenuNet;
+	float revenuBrut;
+	printf("entrez votre revenu net\n");
+	scanf_s("%f", &revenuNet);
+	if (revenuNet < 9870)
+	{
+		revenuBrut = revenuNet;
+	}
+	else if (revenuNet < 26086)
+	{
+		revenuBrut = 0.86*revenuNet;
+	}
+	else if (revenuNet < 72617)
+	{
+		revenuBrut = 0.70*revenuNet;
+	}
+	else if (revenuNet < 153783)
+	{
+		revenuBrut = 0.59*revenuNet;
+	}
+	else
+	{
+		revenuBrut = 0.55*revenuNet;
+	}
+	printf("votre revenue brut est de %f euros\n",revenuBrut);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
