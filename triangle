@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	float AB;
+	float BC;
+	float CA;
+	printf("entrez la longueur de 3 segments AB,BC,CA\n");
+	scanf_s("%f %f %f",&AB, &BC, &CA);
+	if ((AB<(BC + CA)) && (BC<(AB + CA)) && (CA<(BC + AB)))
+	{
+		printf("\n c'est un triangle\n");
+	}
+	else
+	{
+		printf("\n ce n'est pas un triangle\n");
+	}
+	system("pause");
+	return(EXIT_SUCCESS);
+}
