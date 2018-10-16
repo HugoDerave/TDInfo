@@ -43,7 +43,7 @@ void loop() {
  lcd.print(seconde);
  lcd.print(":");
  lcd.print(centieme);
- delay(100);
+ delay(10);
  }
  
  
