@@ -8,7 +8,7 @@ IOstd io;
 const byte PinStart = 2;
 
 bool state= false;
-int centieme=0;
+int dixieme=0;
 int seconde=0;
 int minute=0;
 int heure=0;
@@ -25,7 +25,7 @@ void setup() {
   lcd.print(":");
   lcd.print(seconde);
   lcd.print(":");
-  lcd.print(centieme);
+  lcd.print(dixieme);
 }
 void loop() {
  while (io.digitalRead(12)==LOW)
@@ -39,19 +39,19 @@ void loop() {
  lcd.print(":");
  lcd.print(seconde);
  lcd.print(":");
- lcd.print(centieme);
- delay(10);
+ lcd.print(dixieme);
+ delay(100);
  }
 }
 void chrono()
 {
-  if (centieme<99)
+  if (dixieme<9)
   {
-    centieme++;
+    dixieme++;
   }
   else
   {
-    centieme=0;
+    dixieme=0;
     if (seconde<59)
   {
     seconde++;
@@ -76,7 +76,7 @@ void resetc()
   heure=0;
   minute=0;
   seconde=0;
-  centieme=0;
+  dixieme=0;
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print(heure);
@@ -85,5 +85,5 @@ void resetc()
   lcd.print(":");
   lcd.print(seconde);
   lcd.print(":");
-  lcd.print(centieme);
+  lcd.print(dixieme);
 }
