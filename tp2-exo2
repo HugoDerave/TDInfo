@@ -3,12 +3,12 @@
 #include <ISL12026.h>
 #include <MCP23X08.h>
 #include <LiquidCrystal.h>
-const byte increment = 8;
+const byte increment = 2;
 int compteur=0;
 ISENLiquidCrystal lcd;
 void setup() {
   pinMode(PinReset, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(8), incrementation, RISING);
+  attachInterrupt(digitalPinToInterrupt(2), incrementation, RISING);
   lcd.begin(16,2);
 }
 void loop() {
