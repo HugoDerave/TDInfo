@@ -1,0 +1,94 @@
+#include <ISEN.h>
+#include <LabIsen-2009.h>
+#include <ISL12026.h>
+#include <MCP23X08.h>
+#include <LiquidCrystal.h>
+const byte PinReset = 8;
+const byte PinStart = 2;
+const byte PinStop = 9;
+bool state= false;
+int centieme=0;
+int seconde=0;
+int minute=0;
+int heure=0;
+ISENLiquidCrystal lcd;
+void setup() {
+  pinMode(PinReset, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(8), resetc, RISING);
+  pinMode(PinStart, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(2), startc, RISING);
+  pinMode(PinStop, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(9), stopc, RISING);
+  lcd.begin(16,2);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print(heure);
+  lcd.print(":");
+  lcd.print(minute);
+  lcd.print(":");
+  lcd.print(seconde);
+  lcd.print(":");
+  lcd.print(centieme);
+}
+void loop() {
+ while (state==true)
+ {
+ chrono();
+ lcd.clear();
+ lcd.setCursor(0,0);
+ lcd.print(heure);
+ lcd.print(":");
+ lcd.print(minute);
+ lcd.print(":");
+ lcd.print(seconde);
+ lcd.print(":");
+ lcd.print(centieme);
+ delay(100);
+ }
+ 
+ 
+}
+void chrono()
+{
+  if (centieme<99)
+  {
+    centieme++;
+  }
+  else
+  {
+    centieme=0;
+    if (seconde<59)
+  {
+    seconde++;
+  }
+  else 
+  {
+    seconde=0;
+    if (minute<59)
+    {
+    minute++;
+    }
+    else
+    {
+    minute=0;
+    heure++;
+    }
+  }
+  }
+  delay(10);
+}
+void startc()
+{
+ state=true; 
+}
+void stopc()
+{
+  state=false;
+}
+void resetc()
+{
+  stopc();
+  heure=0;
+  minute=0;
+  seconde=0;
+}
