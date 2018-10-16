@@ -1,0 +1,24 @@
+#include <ISEN.h>
+#include <LabIsen-2009.h>
+#include <ISL12026.h>
+#include <MCP23X08.h>
+#include <LiquidCrystal.h>
+const byte increment = 8;
+int compteur=0;
+ISENLiquidCrystal lcd;
+void setup() {
+  pinMode(PinReset, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(8), incrementation, RISING);
+  lcd.begin(16,2);
+}
+void loop() {
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print(compteur);
+  delay(50)
+ }
+}
+void incrementation()
+{
+  compteur++;
+}
