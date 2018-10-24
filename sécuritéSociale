@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{	
+	unsigned long long codeSecu;
+    int  cleControle, age, sexe,avant2000;
+	printf("entrez votre code de securite social, puis la clef de controle et 1 si vous etes nee avant 2000 ou 0 sinon.\n");
+	scanf_s("%llu %d %d",&codeSecu,&cleControle,&avant2000);
+	sexe = codeSecu / 1000000000000;
+	if (97 - (codeSecu % 97) == cleControle)
+	{
+		if (avant2000 == 0)
+		{
+			age = 18 - ((codeSecu / 10000000000) - sexe * 100);
+		}
+		else
+		{
+			age = 118 - ((codeSecu / 10000000000) - sexe * 100);
+		}
+		if (age < 10)
+		{
+			if (sexe == 1 || sexe == 3 || sexe == 7)
+			{
+				printf("cette personne est un enfant de %d ans\n", age);
+			}
+			else if (sexe == 2 || sexe == 4 || sexe == 8)
+			{
+				printf("cette personne est une enfant de %d ans\n", age);
+			}
+		}
+		else if (age < 19)
+		{
+			if (sexe == 1 || sexe == 3 || sexe == 7)
+			{
+				printf("cette personne est un adolescent de %d ans\n", age);
+			}
+			else if (sexe == 2 || sexe == 4 || sexe == 8)
+			{
+				printf("cette personne est une adolescente de %d ans\n", age);
+			}
+		}
+		else if (age < 30)
+		{
+			if (sexe == 1 || sexe == 3 || sexe == 7)
+			{
+				printf("cette personne est un jeune homme de %d ans\n", age);
+			}
+			else if (sexe == 2 || sexe == 4 || sexe == 8)
+			{
+				printf("cette personne est une jeune femme de %d  ans\n", age);
+			}
+		}
+		else
+		{
+			if (sexe == 1 || sexe == 3 || sexe == 7)
+			{
+				printf("cette personne est un homme adulte de %d ans\n", age);
+			}
+			else if (sexe == 2 || sexe == 4 || sexe == 8)
+			{
+				printf("cette personne est une  femme adulte de %d ans\n", age);
+			}
+		}
+	}
+	else
+	{
+		printf("le code de securite social ne corespond pas avec la clef de controle que vous avez rentrez\n");
+	}
+	system("pause");
+	return (EXIT_SUCCESS);
+
+}
