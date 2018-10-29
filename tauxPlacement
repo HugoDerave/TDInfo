@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	float investissement;
+	float capital;
+	float taux;
+	int annee=0;
+	printf("Entrez le montant de la somme que vous souhaitez placer ainsi que le taux d'interet ex:1.5\n");
+	scanf_s("%f %f", &investissement, &taux);
+	printf("Capital : %f taux : %f \n", investissement, taux);
+	capital = investissement;
+	while (capital <= (investissement * 2))
+	{
+		annee++;
+		capital = capital*(1+(taux/100));
+		printf("an %d : %0.2f euros \n",annee,capital);
+	}
+	printf("Votre capital aura double au bout de %d ans\n", annee);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
