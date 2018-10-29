@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int annee = 3000;
+	printf("la liste des annees bissextiles de façon decroissante de 3000 a 2000 est\n");
+		for (annee; annee >= 2000; annee -= 2)
+		{
+			if (annee % 4 == 0 && annee % 100 != 0 || ((annee % 100 == 0) && (annee % 400 == 0)))
+			{
+				printf("%d \n", annee);
+			}
+		}
+	
+	system("pause");
+	return(EXIT_SUCCESS);
+}
