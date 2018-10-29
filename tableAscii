@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int charactere = 32;
+	int ligne = 2;
+	int finligne = 48;
+	printf("  0 1 2 3 4 5 6 7 8 9 A B C D E F\n");
+	printf("0\n");
+	printf("1\n");
+	for (ligne; ligne < 8; ligne++)
+	{
+		printf("%d \0", ligne);
+		for (charactere; charactere < finligne; charactere++)
+		{
+			printf("%c \0", charactere);
+		}
+		printf("\n");
+		finligne += 16;
+	}
+	system("pause");
+	return(EXIT_SUCCESS);
+}
