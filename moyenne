@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	float valeur1=0;
+	float valeur2=0;
+	int nbValeur=-1;
+	float moyenne;
+	printf("rentrez les valeurs des nombres dont vous voulez faire la moyenne puis entrez -1 \n");
+	while (valeur1 != -1)
+	{
+		scanf_s("%f", &valeur1);
+		valeur2 += valeur1;
+		nbValeur++;
+	}
+	moyenne = (valeur2 + 1) / nbValeur;
+	printf(" la moyenne est de %0.2lf pour un nombre de  %d valeurs\n", moyenne,nbValeur);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
