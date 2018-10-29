@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	/* version avec boucle for
+	int nbEntier;
+	int increment=1;
+	int somme=0;
+	printf("Entrez la valeur de n pour laquelle vous voulez calculer la somme des n premiers entiers non nuls ? :\n");
+	scanf_s("%d", &nbEntier);
+	for (increment; increment <= nbEntier; increment++) { somme += increment; }
+	printf("La somme des %d premiers entiers positifs est egale a %d \n",nbEntier,somme);*/
+
+	/* version avec boucle while
+	int nbEntier;
+	int increment = 1;
+	int somme = 0;
+	printf("Entrez la valeur de n pour laquelle vous voulez calculer la somme des n premiers entiers non nuls ? :\n");
+	scanf_s("%d", &nbEntier);
+	while (increment <= nbEntier)
+	{
+		somme += increment;
+		increment++;
+	}
+	printf("La somme des %d premiers entiers positifs est egale a %d \n", nbEntier, somme);*/
+	int nbEntier;
+	int increment = 1;
+	int somme = 0;
+	printf("Entrez la valeur de n pour laquelle vous voulez calculer la somme des n premiers entiers non nuls ? :\n ");
+	scanf_s("%d", &nbEntier);
+	do
+	{
+		somme += increment;
+		increment++;
+	} while (increment <= nbEntier);
+	printf("La somme des %d premiers entiers positifs est egale a %d \n", nbEntier, somme);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
