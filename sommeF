@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int a;
+	printf("rentrez le nombre d'entier n pour la somme des n premiers entier\n");
+	scanf_s("%d", &a);
+	somme(a);
+	system("pause");
+	return (EXIT_SUCCESS);
+}
+
+int somme(int n)
+{
+	n = n*(n + 1) / 2;
+	printf("%d\n", n);
+	return n;
+	
+}
