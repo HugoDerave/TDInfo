@@ -1,0 +1,19 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+char test[] = "bonjour toi la bas";
+void compterCar(char chaine[], int tailleMax)
+{
+	int i = 0;
+	while (chaine[i] != '\0' && i < tailleMax)
+	{
+		i++;
+	}
+	printf("%d \n", i);
+}
+int main()
+{
+	compterCar(test,25);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
