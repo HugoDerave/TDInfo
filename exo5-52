@@ -1,0 +1,19 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+void swap(int *A, int *B)
+{
+	int tmp;
+	tmp = *A;
+	*A = *B;
+	*B = tmp;
+}
+int main()
+{
+	int a = 36;
+	int b = 26;
+	swap(&a,&b);
+	printf("valeur a: %d valeur b: %d \n", a, b);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
