@@ -1,0 +1,45 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#define tableauSize 50 
+float tab[tableauSize]={0.0};
+float randomF(float Min,float Max) 
+{
+	return (((float)rand() /RAND_MAX) * (Max-Min)+ Min);
+}
+void afficherTab(int nbValA)
+{
+	for (int i = 0; i < nbValA; i++)
+	{
+		printf("| %f | \n", tab[i]);
+	}
+}
+float maxT(int nbValA)
+{
+	float best = 0;
+
+	for (int i = 0; i < nbValA; i++)
+	{
+		if (tab[i] > best)
+		{
+			best = tab[i];
+		}
+	}
+	printf("%f\n",best);
+}
+void remplirTab( float tab[],int nbVal, float min, float max)
+{
+	for (int i = 0; i < nbVal; i++)
+	{
+		tab[i] = randomF(max, min);
+	}
+}
+
+int main()
+{
+	remplirTab(tab,40,2.5,17.4);
+	afficherTab(40);
+	maxT(50);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
