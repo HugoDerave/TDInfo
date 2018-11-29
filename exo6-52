@@ -1,0 +1,36 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+#define sizeCarre 3
+
+void isMagic(int carre[sizeCarre][sizeCarre])
+{
+	int ligne1, ligne2, ligne3, diago1, diago2, colonne1, colonne2, colonne3;
+	ligne1 = carre[0][0] + carre[0][1] + carre[0][2];
+	ligne2 = carre[1][0] + carre[1][1] + carre[1][2];
+	ligne3 = carre[2][0] + carre[2][1] + carre[2][2];
+	diago1 = carre[0][0] + carre[1][1] + carre[2][2];
+	diago2 = carre[2][0] + carre[1][1] + carre[0][2];
+	colonne1 = carre[0][0] + carre[1][0] + carre[2][0];
+	colonne2 = carre[0][1] + carre[1][1] + carre[2][1];
+	colonne3 = carre[0][2] + carre[1][2] + carre[2][2];
+	if (ligne1 == ligne2  && ligne1==ligne3 && ligne1==diago1 && ligne1==diago2 && ligne1==colonne1 && ligne1==colonne2 && ligne1==colonne3)
+	{
+		printf("vrai \n");
+	}
+	else
+	{
+		printf("faux \n");
+	}
+}
+int main()
+{
+	int carret[sizeCarre][sizeCarre] = {
+		{ 2,7,6 },
+		{ 9,5,1 },
+		{ 4,3,8 }
+	};
+	isMagic(carret);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
