@@ -3,6 +3,7 @@
 #include <time.h>
 #define tableauSize 50 
 float tab[tableauSize]={0.0};
+srand(time(NULL));
 float randomF(float Min,float Max) 
 {
 	return (((float)rand() /RAND_MAX) * (Max-Min)+ Min);
