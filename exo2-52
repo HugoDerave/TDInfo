@@ -3,7 +3,6 @@
 #include <time.h>
 #define tableauSize 50 
 float tab[tableauSize]={0.0};
-srand(time(NULL));
 float randomF(float Min,float Max) 
 {
 	return (((float)rand() /RAND_MAX) * (Max-Min)+ Min);
@@ -38,6 +37,7 @@ void remplirTab( float tab[],int nbVal, float min, float max)
 
 int main()
 {
+	srand(time(NULL));
 	remplirTab(tab,40,2.5,17.4);
 	afficherTab(40);
 	maxT(50);
