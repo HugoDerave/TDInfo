@@ -1,0 +1,49 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+int main() { 
+			 
+	for (int i = 0; i <= 100; i++)
+	{
+		printf("%d \n", i);
+	}
+	printf("---------------------------------------------------------------------------------------------------------------------\n");
+	int charactere = 32;
+	int ligne = 2;
+	int finligne = 48;
+	printf("  0 1 2 3 4 5 6 7 8 9 A B C D E F\n");
+	printf("0\n");
+	printf("1\n");
+	for (ligne; ligne < 7; ligne++)
+	{
+		printf("%d \0", ligne);
+		for (charactere; charactere < finligne; charactere++)
+		{
+			printf("%c \0", charactere);
+		}
+		printf("\n");
+		finligne += 16;
+	}
+	printf("7 \0");
+	finligne = 127;
+	charactere = 112;
+	for (charactere; charactere < finligne; charactere++)
+	{
+		printf("%c \0", charactere);
+	}
+	printf("\n");
+	printf("---------------------------------------------------------------------------------------------------------------------\n");
+	float compte=20;
+	for (compte; compte >= 0; compte -= 0.5)
+	{
+		printf("%f \n", compte);
+	}
+	printf("---------------------------------------------------------------------------------------------------------------------\n");
+	for (int j = 90; j >= 0; j -= 10)
+	{
+		printf("%f \n", sin(j));
+	}
+
+	system("pause");
+	return(EXIT_SUCCESS);
+}
