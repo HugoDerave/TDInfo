@@ -1,0 +1,53 @@
+// inclusion des fichiers d'entêtes (header) d'extension .h
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <Windows.h>
+// définition de macros
+// #define DEBUG
+// programme principal
+// définition de type
+typedef unsigned char boolean;
+typedef unsigned char byte;
+int main() { // accolade ouvrante = début de bloc d'instructions
+// Déclaration de variables réservées au main(), et initialisations facultatives
+	char OneLetter = 'A';
+	char AnOtherLetter = 66;
+	byte toto = 0;
+	unsigned char VerySmallCounter = 255;
+	short SmallCounter = 32767;
+	int Counter = 0;
+	long LargeCounter = 2147483647;
+	unsigned long FullRangeLargeCounter = 4294967295;
+	int ChienDeGarde = 0;
+	float Dim1 = 1.414F;
+	double Dim2 = .5L;
+	boolean TestResult = 1;
+	// Déclaration de constante
+	const double Pi = 3.14159265L;
+	// les instructions du programme principal : main()
+	/********** Debut de programme *****************/
+	printf_s("\n");
+	printf_s("Oneletter = %c, type : char, codage sur %d octets\n", OneLetter, sizeof(OneLetter));
+	printf_s("Counter = %d, type : entier, codage sur %d octets\n", Counter, sizeof(Counter));
+	printf_s("AnOtherLetter = %u, type : char, codage sur %d octets\n", AnOtherLetter, sizeof(AnOtherLetter));
+	printf_s("toto = %x, type : booleen, codage sur %d octets\n", toto, sizeof(toto));
+	printf_s("VerySmallCounter = %u, type : unsigned char, codage sur %d octets\n", VerySmallCounter, sizeof(VerySmallCounter));
+	printf_s("SmallCounter = %hd, type : short, codage sur %d octets \n", SmallCounter, sizeof(SmallCounter));
+	printf_s("Counter = %d, type : int, codage sur %d octets\n", Counter, sizeof(Counter));
+	printf_s("LargeCounter = %ld, type : long, codage sur %d octets\n", LargeCounter, sizeof(LargeCounter));
+	printf_s("FullRangeLargeCounter = %lu, type : unsigned long, codage sur %d octets\n", FullRangeLargeCounter, sizeof(FullRangeLargeCounter));
+	printf_s("ChienDeGarde = %d, type : entier, codage sur %d octets\n", ChienDeGarde, sizeof(ChienDeGarde));
+	printf_s("Dim1 = %f, type : float, codage sur %d octets\n", Dim1, sizeof(Dim1));
+	printf_s("Dim2 = %lf, type : double, codage sur %d octets\n", Dim2, sizeof(Dim2));
+	printf_s("TestResult = %s, type : boolean, codage sur %d octets\n", (TestResult) ? "true" : "false", sizeof(TestResult));
+	printf_s("Pi = %lf, type : const double, codage sur %d octets\n", Pi, sizeof(Pi));
+
+	int A = 1;
+	int B = 2;
+	int C = 3;
+	printf_s("A = %d, adresse : %X\nB = %d, adresse : %X\nC = %d, adresse : %X\n", A, &A, B, &B, C, &C);
+	/*********** Fin de programme ******************/
+	//system("pause");
+	return(EXIT_SUCCESS);
+} // accolade fermante = fin de bloc d'instructions
