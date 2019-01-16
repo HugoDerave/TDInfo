@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int recursStrLen(char *chaine) {
+	if (*chaine == 0) { // condition d'arrêt
+		return(0);// fin de chaîne atteinte
+	}
+	return(1 + recursStrLen(++chaine));
+	// attention: pré-incrémentation
+}
+int main()
+{
+	int n;
+	n = recursStrLen("salut");
+	printf("%d\n", n);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
