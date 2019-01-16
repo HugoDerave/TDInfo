@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void recursCompteur(int compteur) {
+	if (compteur == 0) {
+		printf("%d \n", compteur);
+		return;
+	} //condition d'arrêt
+	recursCompteur(compteur - 1); // appel récursif
+	printf("%d \n", compteur);
+	return;
+}
+int main()
+{
+	recursCompteur(25);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
