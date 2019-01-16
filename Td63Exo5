@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int fibo_naive(int n) 
+{
+	if (n == 0) { return(0); }
+	if (n == 1) { return(1); }
+	return(fibo_naive(n - 1) + fibo_naive(n - 2));
+}
+int main()
+{
+	for (int i = 1; i <= 10; i++) printf("%d \n", fibo_naive(i));
+	system("pause");
+	return(EXIT_SUCCESS);
+}
