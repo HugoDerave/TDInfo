@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+void recursCompteurDecrement(int compteur) {
+	printf("%d \n", compteur);
+	if (compteur == 0) { return; } //condition d'arrêt
+	recursCompteurDecrement(compteur - 1);
+	// appel récursif
+	return;
+}
+int main()
+{
+	recursCompteurDecrement(25);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
