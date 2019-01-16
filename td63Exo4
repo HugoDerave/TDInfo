@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int puissance_recurs(int a, int b) {
+	if (b == 1) { return(a); }
+	return(a * puissance_recurs(a, b - 1));
+}
+int main()
+{
+	int n;
+	n = puissance_recurs(5, 3);
+	printf("%d\n", n);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
