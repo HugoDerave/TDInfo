@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int factorielle_te(int n, int accu) {
+	if (n == 0) return accu;
+	return factorielle_te(n - 1, n * accu);
+}
+int factorielle(int n) {
+	return factorielle_te(n, 1);
+}
+int main()
+{
+	int i;
+	i = factorielle_te(5, 1);
+	printf("%d\n", i);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
