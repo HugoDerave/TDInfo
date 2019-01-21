@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int i = 0;
+void palindrome(char *chaine,int accu1,int accu2) 
+{
+	if (i == 0)
+	{
+		accu1 = strlen(chaine);
+		accu2 = 0; 
+		i++;
+	}
+	if (strlen(chaine) == 0 || *(chaine + accu1-1) != *(chaine + accu2)) {
+		printf("la chaine que vous avez entre n est  pas un palindrome\n");
+	}
+	else {
+		if (accu1-1 == accu2 && *(chaine + accu1-1) == *(chaine + accu2)) {
+			printf("la chaine que vous avez entre est un palindrome\n");
+		}
+		else if(accu1!=accu2&&accu1!=0)
+		{ palindrome(chaine,--accu1, ++accu2); }
+	}
+
+	
+}
+int main()
+{
+	palindrome("girafarig", 0, 0);
+	system("pause");
+	return(EXIT_SUCCESS);
+}
