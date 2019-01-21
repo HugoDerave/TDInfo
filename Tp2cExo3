@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+bool state = false;
+int main()
+{
+	int annee;
+	printf("rentrez une annee inferieur a 10000\n");
+	do
+	{
+		scanf_s("%d", &annee);
+	} while (annee > 10000);
+	if (annee % 4 == 0 && annee % 100 != 0 || ((annee % 100 == 0) && (annee % 400 == 0)))
+	{
+		printf("%d est une annee bissextile\n", annee);
+	}
+	else
+	{
+		printf("%d n'est pas une annee bissextile\n", annee);
+	}
+	if (annee % 4 == 0)
+	{
+		if(annee % 100 != 0)
+		{
+			state = true;
+		}
+	}
+	if (annee % 100 == 0)
+	{
+		if (annee % 400 == 0)
+		{
+			state = true;
+		}
+	}
+	//affichage resultat deuxième version
+	if (state == true)
+	{
+		printf("l'annee %d est une annee bissextile\n", annee);
+	}
+	else
+	{
+		printf("l'annee %d n'est pas une annee bissextile\n", annee);
+	}
+	system("pause");
+	return (EXIT_SUCCESS);
+}
