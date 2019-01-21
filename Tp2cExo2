@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+int reset;
+int main()
+{
+	do 
+	{
+		bool validite = false;
+		float a, b, c;
+		float tmp = 0;
+		do  
+		{
+			printf("entrez les dimensions de votre bagage (inferieur a 150 cm et superieur a 1 cm): \n");
+			scanf_s("%f %f %f", &a, &b, &c);
+		} while (a < 1 || a>150 || b < 1 || b>150 || c < 1 || c>150);
+
+		if (b < a)
+		{
+			tmp = a;
+			a = b;
+			b = tmp;
+		}
+		if (c < a)
+		{
+			tmp = a;
+			a = c;
+			c = tmp;
+		}
+		if (c < b)
+		{
+			tmp = b;
+			b = c;
+			c = tmp;
+		}
+		
+		if (c <= 55 && b<=35 && a <=25)
+		{
+			validite = true;
+		}
+		
+		if (validite == true)
+		{
+			printf("VALIDE\n");
+		}
+		else
+		{
+			printf("NON VALIDE\n");
+		}
+		printf("voulez vou essayer d'autres dimensions, si oui tapez 0 sinon 1\n");
+		scanf_s("%d", &reset);
+	} while (reset != 1);
+	return ("EXIT_SUCCESS");
