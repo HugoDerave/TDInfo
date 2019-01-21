@@ -9,7 +9,7 @@ int fibo_naive(int n)
 }
 int main()
 {
-	for (int i = 1; i <= 10; i++) printf("%d \n", fibo_naive(i));
+	for (int i = 1; i <= 10; i++){ printf("%d \n", fibo_naive(i));}
 	system("pause");
 	return(EXIT_SUCCESS);
 }
