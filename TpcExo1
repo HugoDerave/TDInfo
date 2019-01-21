@@ -1,0 +1,63 @@
+#include <stdio.h>
+#define MAX 65535 
+void sommefor()
+{
+	// version avec boucle for
+	int n=0;
+	int i = 1;
+	unsigned short int add = 0;
+	printf("Entrez la valeur de n pour laquelle vous voulez calculer la somme des n premiers entiers non nuls ? :\n");
+	do
+	{
+		printf("veuillez entrez une valeur valable\n");
+		scanf_s("%hu", &n);
+	} while (1 > n || n > 361);
+	for (i; i < n; i++) { add += i; }
+	printf("La somme des %d premiers entiers positifs est egale a %hu \n", n, add);
+}
+void sommeWhile()
+{
+	// version avec boucle while
+	short int n;
+	int i = 1;
+	unsigned short int add = 0;
+	printf("Entrez la valeur de n pour laquelle vous voulez calculer la somme des n premiers entiers non nuls ? :\n");
+	do
+	{
+		printf("veuillez entrez une valeur valable\n");
+		scanf_s("%hu", &n);
+	} while (1 > n || n > 361);
+	while (i <= n && MAX - add >= i)
+	{
+		add += i;
+		i++;
+	}
+	printf("La somme des %d premiers entiers positifs est egale a %hu la boucle s'est arrete au bout de %d passage dans la boucle \n", n, add,i-1);
+}
+void sommeDoWhile()
+{
+	// version avec boucle do while
+	short int n;
+	int i = 1;
+	unsigned short int add = 0;
+	printf("Entrez la valeur de n pour laquelle vous voulez calculer la somme des n premiers entiers non nuls ? :\n");
+	do
+	{
+		printf("veuillez entrez une valeur valable\n");
+		scanf_s("%hu", &n);
+	} while (1 > n || n > 361);
+	do
+	{
+		add += i;
+		i++;
+	} while (i <= n && limite - MAX >= i );
+	printf("La somme des %d premiers entiers positifs est egale a %hu la boucle s'est arrete au bout de %d passage dans la boucle \n", n, add,i-1);
+}
+int main()
+{
+	sommefor();
+	sommeWhile();
+	dosommeWhile();
+	system("pause");
+	return(EXIT_SUCCESS);
+}
