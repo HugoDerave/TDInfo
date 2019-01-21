@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <time.h>
+int main()
+{
+	srand((const)time(NULL));
+	int nbTentative = 0;
+	int test;
+	int	alea;
+	
+	alea = (rand() % 4242);
+	do
+	{
+		printf("entrez un nombreux entre 0 et 4242\n");
+		scanf_s("%d",&test);
+		if (test < alea)
+		{
+			printf("c est plus\n");
+		}
+		if (test > alea)
+		{
+			printf("c est moins\n");
+		}
+	} while (test != alea);
+	printf("bravo vous avez trouvé la bonne valeur");
+	system("pause");
+	return(EXIT_SUCCESS);
+}
