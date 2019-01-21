@@ -32,7 +32,6 @@ int main()
 			state = true;
 		}
 	}
-	//affichage resultat deuxième version
 	if (state == true)
 	{
 		printf("l'annee %d est une annee bissextile\n", annee);
