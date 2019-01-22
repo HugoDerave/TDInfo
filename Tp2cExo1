@@ -51,14 +51,14 @@ void sommeDoWhile()
 	{
 		add += i;
 		i++;
-	} while (i <= n && limite - MAX >= i );
+	} while (i <= n && MAX - add >= i );
 	printf("La somme des %d premiers entiers positifs est egale a %hu la boucle s'est arrete au bout de %d passage dans la boucle \n", n, add,i-1);
 }
 int main()
 {
 	sommefor();
 	sommeWhile();
-	dosommeWhile();
+	sommeDoWhile();
 	system("pause");
 	return(EXIT_SUCCESS);
 }
