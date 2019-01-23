@@ -8,7 +8,7 @@ bool flag = false;
 void testFlag()
 {
 	int ordonne = 0,m=0;
-	while (tab[m] >= tab[m + 1])
+	while (tab[m] >= tab[m + 1]&& m<=99)
 	{
 		m++;
 	}
