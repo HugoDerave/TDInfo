@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define Tab_Size 10000
+int tab[Tab_Size];
+int main()
+{
+	srand((const)time(NULL));
+	for (int i = 0; i < Tab_Size; i++)
+	{
+		tab[i] = rand() % 10000;
+	}
+	for (int j =0; j <= Tab_Size; j++)
+	{
+		for (int k = 0; k < Tab_Size; k++)
+		{
+			if (tab[k] < tab[k+1])
+			{
+				int tmp;
+				tmp = tab[k];
+				tab[k] = tab[k+1];
+				tab[k+1]= tmp;
+			}
+		}
+	}
+	for (int l = 0; l < Tab_Size; l++)
+	{
+		printf("|%4d|", tab[l]);
+	}
+	system("pause");
+	return(EXIT_SUCCESS);
+}
