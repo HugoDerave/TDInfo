@@ -21,13 +21,6 @@ void ordonne(int *A, int *B)
 		*A = *B;
 		*B = tmp;
 	}
-	else
-	{
-		int tmp;
-		tmp = *B;
-		*B = *A;
-		*A = tmp;
-	}
 }
 int main()
 {
